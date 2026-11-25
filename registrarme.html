@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>consultorio R2 - Registrarme</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script type="module" src="./js/registro.js"></script>
+</head>
+<body>
+
+    <header class="cabecera-principal">
+        <a class="enlace-inicio" href="./index.html">
+            <img class="logotipo" src="./img/diente.svg" alt="logotipo clinica">
+        </a>
+    </header>
+
+    <main class="contenido-principal">
+        <h1>Crear cuenta nueva</h1>
+
+        <!-- el envio lo maneja registro.js: valida todos los campos antes de crear la cuenta -->
+        <form class="formulario-datos" id="formulario-registro" action="./index.html" method="get">
+            <label for="id-nombre">Nombre</label>
+            <input type="text" name="nombre" id="id-nombre" autocomplete="given-name" aria-describedby="error-id-nombre" required>
+            <p class="mensaje-error" id="error-id-nombre" aria-live="polite"></p>
+
+            <label for="id-apellido">Apellido</label>
+            <input type="text" name="apellido" id="id-apellido" autocomplete="family-name" aria-describedby="error-id-apellido" required>
+            <p class="mensaje-error" id="error-id-apellido" aria-live="polite"></p>
+
+            <label for="id-dni">DNI</label>
+            <input type="text" name="dni" id="id-dni" inputmode="numeric" maxlength="8" placeholder="Sin puntos" aria-describedby="error-id-dni" required>
+            <p class="mensaje-error" id="error-id-dni" aria-live="polite"></p>
+
+            <label for="id-obra-social">Obra social</label>
+            <input type="text" name="obra_social" id="id-obra-social" placeholder="Opcional">
+
+            <label for="id-telefono">Telefono</label>
+            <input type="tel" name="telefono" id="id-telefono" autocomplete="tel" maxlength="20" aria-describedby="error-id-telefono" required>
+            <p class="mensaje-error" id="error-id-telefono" aria-live="polite"></p>
+
+            <label for="id-correo">Correo electronico</label>
+            <input type="email" name="correo" id="id-correo" autocomplete="email" aria-describedby="error-id-correo" required>
+            <p class="mensaje-error" id="error-id-correo" aria-live="polite"></p>
+
+            <label for="id-password">Contraseña</label>
+            <input type="password" name="password" id="id-password" autocomplete="new-password" minlength="6" aria-describedby="error-id-password" required>
+            <p class="mensaje-error" id="error-id-password" aria-live="polite"></p>
+
+            <label for="id-password-confirmar">Confirmar contraseña</label>
+            <input type="password" name="password_confirmar" id="id-password-confirmar" autocomplete="new-password" aria-describedby="error-id-password-confirmar" required>
+            <p class="mensaje-error" id="error-id-password-confirmar" aria-live="polite"></p>
+
+            <button type="submit">Registrarme</button>
+            <button class="boton-secundario" type="button" onclick="history.back()">Volver atras</button>
+        </form>
+
+        <!-- aviso de cuenta creada -->
+        <div class="notificacion" id="notificacion" role="status" aria-live="polite"></div>
+    </main>
+
+    <footer class="pie-principal">
+        <ul class="redes-sociales">
+            <li>
+                <a href="https://instagram.com/@consultorioR2" target="_blank">
+                    @consultorioR2
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+</body>
+</html>

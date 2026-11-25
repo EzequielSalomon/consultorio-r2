@@ -1,0 +1,14 @@
+[
+    { "id": "general", "nombre": "Odontología General" },
+    { "id": "limpieza", "nombre": "Limpieza Dental" },
+    { "id": "ortodoncia", "nombre": "Ortodoncia" },
+    { "id": "periodoncia", "nombre": "Periodoncia" },
+    { "id": "endodoncia", "nombre": "Endodoncia (Tratamiento de Conducto)" },
+    { "id": "extraccion", "nombre": "Extracción Dental" },
+    { "id": "implante", "nombre": "Implante" },
+    { "id": "protesis", "nombre": "Prótesis Dental" },
+    { "id": "blanqueamiento", "nombre": "Blanqueamiento" },
+    { "id": "carillas", "nombre": "Carillas Estéticas" },
+    { "id": "odontopediatria", "nombre": "Odontopediatría" },
+    { "id": "bruxismo", "nombre": "Placa para Bruxismo" }
+]

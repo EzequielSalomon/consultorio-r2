@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>consultorio R2 - Recuperar cuenta</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script type="module" src="./js/recuperarCuenta.js"></script>
+</head>
+<body>
+
+    <header class="cabecera-principal">
+        <a class="enlace-inicio" href="./index.html">
+            <img class="logotipo" src="./img/diente.svg" alt="logotipo clinica">
+        </a>
+    </header>
+
+    <main class="contenido-principal">
+        <h1>Recuperar cuenta</h1>
+
+        <p>Ingresa tu correo electronico y te enviaremos un mensaje con los proximos pasos para recuperar tu cuenta.</p>
+
+        <!-- el envio lo maneja recuperarCuenta.js -->
+        <form class="formulario-datos" id="formulario-recuperar" action="./index.html" method="get">
+            <label for="id-correo">Correo electronico</label>
+            <input type="email" name="correo" id="id-correo" autocomplete="email" aria-describedby="error-id-correo" required>
+            <p class="mensaje-error" id="error-id-correo" aria-live="polite"></p>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <!-- aviso de exito; role="status" hace que el lector de pantalla lo anuncie -->
+        <div class="notificacion" id="notificacion" role="status" aria-live="polite"></div>
+
+        <a class="enlace-auxiliar" href="./index.html">Volver al inicio de sesión</a>
+    </main>
+
+    <footer class="pie-principal">
+        <ul class="redes-sociales">
+            <li>
+                <a href="https://instagram.com/@consultorioR2" target="_blank">
+                    @consultorioR2
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+</body>
+</html>
