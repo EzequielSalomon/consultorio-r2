@@ -1,0 +1,44 @@
+# CI: en cada push o pull request a main, GitHub levanta una maquina virtual,
+# instala todo y corre los tests E2E de Playwright con los archivos del push.
+# Si algun test falla, el commit queda marcado con una X roja.
+# CD: Vercel publica el sitio por su cuenta en cada push a main.
+
+name: Tests E2E
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Descargar el codigo
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Instalar el navegador de Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Correr los tests E2E
+        run: npx playwright test
+
+      # el reporte HTML queda para descargar desde la pestana Actions (aunque fallen los tests)
+      - name: Guardar el reporte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-playwright
+          path: playwright-report/
+          retention-days: 7
